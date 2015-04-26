@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1"/>
+    <title></title>
+</head>
+<body>
+<div th:replace="base/base :: header">
+    <h1>This is the header for home</h1>
+</div>
+<p th:text="#{all.Persons}"></p>
+<div>
+    <table border="1" >
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Job</th>
+            <th>City</th>
+        </tr>
+        <tr th:each="person : ${persons}">
+            <td th:text="${person.name}">Test Name</td>
+            <td th:text="${person.age}">Test Age</td>
+            <td th:text="${person.job}">Test Job</td>
+            <td th:text="${person.city}">Test City</td>
+            <!--<td th:text="${chgStation.inStock}? #{true} : #{false}">yes</td>-->
+        </tr>
+    </table>
+    <div>
+    </div>
+</div>
+
+<div th:replace="base/base :: footer">
+    &copy; This is the footer for home
+</div>
+</body>
+</html>
